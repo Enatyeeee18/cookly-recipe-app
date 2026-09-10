@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: cookly-api
+    runtime: docker
+    dockerfilePath: ./apps/api/Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        sync: false

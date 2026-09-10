@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Cookly",
+    "slug": "cookly",
+    "version": "1.0.0",
+    "scheme": "cookly",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.cookly.recipe",
+      "versionCode": 1,
+      "permissions": []
+    },
+    "ios": {
+      "bundleIdentifier": "com.cookly.recipe",
+      "buildNumber": "1"
+    },
+    "splash": {
+      "backgroundColor": "#F8F6F1"
+    },
+    "assetBundlePatterns": ["**/*"]
+  }
+}

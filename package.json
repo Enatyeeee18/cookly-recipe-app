@@ -1,0 +1,35 @@
+{
+  "name": "cookly",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cookly — A production-ready cooking & recipe app",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "db:up": "docker-compose up -d",
+    "db:down": "docker-compose down",
+    "db:migrate": "cd apps/api && npx prisma migrate dev",
+    "db:seed": "cd apps/api && npx prisma db seed",
+    "db:generate": "cd apps/api && npx prisma generate",
+    "db:studio": "cd apps/api && npx prisma studio",
+    "db:reset": "cd apps/api && npx prisma migrate reset --force",
+    "api:dev": "cd apps/api && npm run start:dev",
+    "mobile:dev": "cd apps/mobile && npx expo start",
+    "mobile:typecheck": "cd apps/mobile && npm run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime   @default(now())
+  favorites    Favorite[]
+}
+
+model Recipe {
+  id          String     @id
+  title       String
+  category    String
+  time        String
+  difficulty  String
+  emoji       String
+  description String   @db.Text
+  ingredients Json
+  createdAt   DateTime @default(now())
+  favorites   Favorite[]
+}
+
+model Favorite {
+  userId   String
+  recipeId String
+  createdAt DateTime @default(now())
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  @@id([userId, recipeId])
+  @@index([recipeId])
+}
