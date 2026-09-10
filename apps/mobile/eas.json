@@ -7,12 +7,12 @@
     "preview": {
       "distribution": "internal",
       "android": { "buildType": "apk" },
-      "env": { "EXPO_PUBLIC_API_URL": "https://api.example.com" }
+      "env": { "EXPO_PUBLIC_API_URL": "https://cookly-api.onrender.com" }
     },
     "production": {
       "distribution": "store",
       "android": { "buildType": "app-bundle" },
-      "env": { "EXPO_PUBLIC_API_URL": "https://api.example.com" }
+      "env": { "EXPO_PUBLIC_API_URL": "https://cookly-api.onrender.com" }
     }
   },
   "submit": {
